@@ -17,7 +17,7 @@ namespace DoorControl_StupMockExercise
             doorControl.setDoorControl(doorControl);
             doorControl.RequestEntry(1);
 
-            door.getDoorControl().DoorOpened();
+            door.getDoorControl().DoorOpened(); // tester
         }
     }
 }
