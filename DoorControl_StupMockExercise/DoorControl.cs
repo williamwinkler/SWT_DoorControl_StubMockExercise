@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DoorControl_StupMockExercise
 {
-    internal class DoorControl
+    public class DoorControl
     {
         private IDoor _door;
         private IEntryNotification _entryNotification;
@@ -20,10 +20,15 @@ namespace DoorControl_StupMockExercise
             _userValidation = userValidation;
         }
 
-        void RequestEntry(int id)
+        public void setDoorControl(DoorControl doorControl)
         {
-            bool status = _userValidation.ValidateEntryRequest(id);
-            if (status)
+            _door.setDoorControl(doorControl);
+        }
+        public void RequestEntry(int id)
+        {
+            Console.WriteLine("Requested entry for id: " + id);
+            bool granted = _userValidation.ValidateEntryRequest(id);
+            if (granted)
             {
                 _door.Open();
                 _entryNotification.NotifyEntryGranted(id);
@@ -34,16 +39,15 @@ namespace DoorControl_StupMockExercise
             }
         }
 
-        void DoorOpened()
+        public void DoorOpened()
         {
+            Console.WriteLine("DoorOpened() called");
             _door.Close();
-            _doorClosed = false;
-
         }
 
-        void DoorClosed()
+        public void DoorClosed()
         {
-            _doorClosed = true;
+            Console.WriteLine("DoorClosed() called");
         }
     }
 }

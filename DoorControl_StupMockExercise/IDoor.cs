@@ -10,5 +10,11 @@ namespace DoorControl_StupMockExercise
     {
         void Open();
         void Close();
+
+        void setDoorControl(DoorControl control);
+
+        bool getDoorClosed();
+
+        DoorControl getDoorControl();
     }
 }

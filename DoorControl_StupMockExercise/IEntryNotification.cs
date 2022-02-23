@@ -6,8 +6,8 @@ using System.Threading.Tasks;
 
 namespace DoorControl_StupMockExercise
 {
-    internal interface IEntryNotification
+    public interface IEntryNotification
     {
-        void NotifyEntryGranted(int id);
+        public void NotifyEntryGranted(int id);
     }
 }
