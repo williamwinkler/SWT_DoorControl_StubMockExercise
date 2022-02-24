@@ -14,7 +14,7 @@ namespace DoorControl_StupMockExercise
                                             new EntryNotification(),
                                             new UserValidation());
 
-            doorControl.setDoorControl(doorControl);
+            door.setDoorControl(doorControl);
             doorControl.RequestEntry(1);
 
             door.getDoorControl().DoorOpened(); // tester
