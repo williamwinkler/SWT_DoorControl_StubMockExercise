@@ -25,8 +25,10 @@ namespace Tester_DoorControl_StupMockExercise
         [Test]
         public void SendValidRequest_resultDoorOpen()
         {
+            // Act
             uut.RequestEntry(1);
 
+            //Assert
             Assert.AreEqual(false, door.getDoorClosed());
             
         }
